@@ -1,4 +1,5 @@
 const express = require('express');
+const req = require('express/lib/request');
 const app = express();
 const connection = require('./database/database');
 
@@ -14,6 +15,10 @@ connection.authenticate().then(() => {
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+
+const Cliente = require('./modules/clientes');
+const Funcionario = require('./modules/funcionarios');
+const Evento = require('./modules/eventos');
 
 app.get('/', (req, res) => {
     res.render('index');
