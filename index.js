@@ -15,6 +15,10 @@ connection.authenticate().then(() => {
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.render('index');
+});
+
 app.listen(8080, () => {
     console.log('Servidor ON.');
 })
