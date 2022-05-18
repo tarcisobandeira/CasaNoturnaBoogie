@@ -23,7 +23,7 @@ const Usuario = require('./modules/usuarios');
 const Produto = require('./modules/produtos');
 
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('login');
 });
 
 app.listen(8080, () => {
