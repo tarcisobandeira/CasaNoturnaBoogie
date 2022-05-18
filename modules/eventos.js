@@ -35,6 +35,6 @@ Evento.belongsTo(Funcionario, {
     }
 });
 
-Evento.sync({force: true});
+//Evento.sync({force: true});
 
 module.exports = Evento;

@@ -19,6 +19,8 @@ app.use(express.json());
 const Cliente = require('./modules/clientes');
 const Funcionario = require('./modules/funcionarios');
 const Evento = require('./modules/eventos');
+const Usuario = require('./modules/usuarios');
+const Produto = require('./modules/produtos');
 
 app.get('/', (req, res) => {
     res.render('index');
