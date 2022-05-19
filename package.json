@@ -14,8 +14,7 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
-    "jquery": "^3.6.0",
-    "jquery-mask-plugin": "^1.14.16",
+    "inputmask": "^5.0.7",
     "jsdom": "^19.0.0",
     "mysql2": "^2.3.0",
     "sequelize": "^6.6.5"

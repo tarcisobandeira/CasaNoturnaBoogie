@@ -1,0 +1,25 @@
+<%- include('../partials/head.ejs') %>
+<br>
+<div class="container">
+    <label class="col justify-content-center col-form-label col-form-label-lg">Bem vindo a Casa Noturna Boogie</label>
+    <div class="card">
+        <div class="card-body">
+            <form method="POST" action="/loginF/entrar">
+                <div class="form-floating mb-3">
+                    <input type="text" name="login" class="form-control" id="login" placeholder="Login" required>
+                    <label for="login">Login</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" name="senha" class="form-control" id="senha" placeholder="Senha" required>
+                    <label for="senha">Senha</label>
+                </div>
+                <div class="row justify-content-center">
+                    <button type="submit" class="btn btn-primary col-sm-2">Entrar</button>
+                    <a href="/login" class="btn btn-danger col-sm-2 offset-md-1">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer.ejs') %>

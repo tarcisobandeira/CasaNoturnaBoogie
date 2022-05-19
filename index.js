@@ -23,12 +23,14 @@ const Usuario = require('./modules/usuarios');
 const Produto = require('./modules/produtos');
 
 const clienteController = require('./controllers/clienteController');
+const FuncionarioController = require('./controllers/funcionarioController');
 
 app.get('/', (req, res) => {
     res.render('login');
 });
 
 app.use('/', clienteController);
+app.use('/', FuncionarioController);
 
 app.listen(8080, () => {
     console.log('Servidor ON.');
