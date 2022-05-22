@@ -26,7 +26,7 @@ router.get('/index', (req, res) => {
             clientel: cli
         });
     }else{
-        res.render('login');
+        res.render('/login');
     }
 });
 
