@@ -17,6 +17,7 @@
     "inputmask": "^5.0.7",
     "jsdom": "^19.0.0",
     "mysql2": "^2.3.0",
-    "sequelize": "^6.6.5"
+    "sequelize": "^6.6.5",
+    "sweetalert2": "^11.4.15"
   }
 }
