@@ -1,5 +1,6 @@
 const express = require('express');
 const Funcionarios = require('../modules/funcionarios');
+const Cliente = require('../modules/clientes');
 const Usuarios = require('../modules/usuarios');
 const router = express.Router();
 
@@ -13,9 +14,22 @@ router.get('/loginFun', (req, res) => {
     res.render('funcionarios/loginF');
 });
 
+router.get('/clientes', (req, res) => {
+    Cliente.findAll({
+        order: [
+            ['nome', 'ASC']
+        ]
+    }).then(clientes => {
+        res.render('funcionarios/clienteF', {
+            clientes: clientes,
+            usuarioFun: user
+        });
+    });
+});
+
 router.get('/funIndex', (req, res) => {
     if(loginf == true){
-        res.render('funcionarios/index', {
+            res.render('funcionarios/index', {
             usuarioFun: user
         });
     }else{

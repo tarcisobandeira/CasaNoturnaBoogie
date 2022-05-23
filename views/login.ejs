@@ -4,9 +4,9 @@
     <label class="col justify-content-center col-form-label col-form-label-lg">Bem vindo a Casa Noturna Boogie</label>
     <div class="card">
         <div class="card-body">
-            <form method="POST" action="/login/entrar">
+            <form id="form" method="POST" action="/login/entrar">
                 <div class="form-floating mb-3">
-                    <input type="text" name="cpf" class="form-control" id="cpf" placeholder="Login" required>
+                    <input type="text" minlength="14" name="cpf" class="form-control" id="cpf" placeholder="Login" required>
                     <label for="cpf">CPF</label>
                 </div>
                 <div class="row justify-content-center">

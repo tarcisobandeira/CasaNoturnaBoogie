@@ -2,7 +2,6 @@ const express = require('express');
 const Swal = require('sweetalert2');
 const Cliente = require('../modules/clientes');
 const router = express.Router();
-const alerta = require('../utils/alert');
 
 var login = false;
 var cpflogin;
@@ -74,7 +73,7 @@ router.post('/cliente/salvar', (req, res) => {
 
 router.post('/login/entrar', (req, res) => {
     var cpf = req.body.cpf;
-    console.log('1');
+
     if(cpf.length == 14){
         Cliente.findOne({
             where: {
@@ -91,9 +90,7 @@ router.post('/login/entrar', (req, res) => {
             }
         });
     }else{
-        console.log('2');
-        alerta.Toast;
-        console.log('3');
+        res.redirect('/login');
     } 
 });
 
