@@ -1,0 +1,35 @@
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/menu.ejs') %>
+<br>
+<div class="container">
+    <a href="/usuarios/novo" class="btn btn-primary">Add Evento</a>
+    <br>
+    <div class="card">
+        <div class="card-head">Usuários</div>
+        <div class="card-body">
+            <table class="table table-bordered table-hover">
+                <thead class="thead-dark">
+                    <th>Login</th>
+                    <th>Cargo</th>
+                    <th>Funcionário</th>
+                    <th>Ações</th>
+                </thead>
+                <tbody>
+                    <% usuarios.forEach(usuario => { %>
+                        <tr>
+                            <td><%= usuario.nome %></td>
+                            <td><%= usuario.cargo %></td>
+                            <td><%= usuario.funcionario.nome %></td>
+                            <td>
+                                <a href="/usuarios/editar/<%= usuario.id %>" class="btn btn-primary">Editar</a> 
+                                <a href="/usuarios/excluir/<%= usuario.id %>" class="btn btn-danger">Excluir</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer.ejs') %>

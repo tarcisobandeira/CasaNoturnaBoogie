@@ -1,0 +1,49 @@
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/menu.ejs') %>
+<br>
+<div class="container">
+    <a href="/funcionarios/novo" class="btn btn-primary">Add Evento</a>
+    <br>
+    <div class="card">
+        <div class="card-head">funcionarios</div>
+        <div class="card-body">
+            <table class="table table-bordered table-hover">
+                <thead class="thead-dark">
+                    <th>Nome</th>
+                    <th>Cargo</th>
+                    <th>RG</th>
+                    <th>CPF</th>
+                    <th>Nível de Usuário</th>
+                    <th>Endereço</th>
+                    <th>Bairro</th>
+                    <th>Cidade</th>
+                    <th>CEP</th>
+                    <th>Telefone</th>
+                    <th>Ações</th>
+                </thead>
+                <tbody>
+                    <% funcionarios.forEach(funcionario => { %>
+                        <tr>
+                            <td><%= funcionario.nome %></td>
+                            <td><%= funcionario.cargo %></td>
+                            <td><%= funcionario.rg %></td>
+                            <td><%= funcionario.cpf %></td>
+                            <td><%= funcionario.nivelUsuario %></td>
+                            <td><%= funcionario.endereco %></td>
+                            <td><%= funcionario.bairro %></td>
+                            <td><%= funcionario.cidade %></td>
+                            <td><%= funcionario.cep %></td>
+                            <td><%= funcionario.telefone %></td>
+                            <td>
+                                <a href="/funcionarios/editar/<%= funcionario.id %>" class="btn btn-primary">Editar</a> 
+                                <a href="/funcionarios/excluir/<%= funcionario.id %>" class="btn btn-danger">Excluir</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer.ejs') %>

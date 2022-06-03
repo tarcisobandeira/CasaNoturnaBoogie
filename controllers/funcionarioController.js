@@ -1,11 +1,10 @@
 const express = require('express');
 const Funcionarios = require('../modules/funcionarios');
-const Cliente = require('../modules/clientes');
 const Usuarios = require('../modules/usuarios');
 const router = express.Router();
 
 var loginf = false;
-var user;
+var usuar;
 
 router.get('/loginFun', (req, res) => {
     if(loginf == true){
@@ -14,23 +13,10 @@ router.get('/loginFun', (req, res) => {
     res.render('funcionarios/loginF');
 });
 
-router.get('/clientes', (req, res) => {
-    Cliente.findAll({
-        order: [
-            ['nome', 'ASC']
-        ]
-    }).then(clientes => {
-        res.render('funcionarios/clienteF', {
-            clientes: clientes,
-            usuarioFun: user
-        });
-    });
-});
-
 router.get('/funIndex', (req, res) => {
     if(loginf == true){
             res.render('funcionarios/index', {
-            usuarioFun: user
+            usuarioFun: usuar
         });
     }else{
         res.redirect('/loginFun');
@@ -55,13 +41,21 @@ router.post('/loginFun/entrar', (req, res) => {
         }else if(usuario.senha == senha){
             console.log('Bem vindo ' + usuario.funcionario.nome);
             loginf = true;
-            user = usuario;
+            usuar = usuario;
             res.redirect('/funIndex');
         }else{
             console.log('Senha Invalida.');
             res.redirect('/loginFun');
         }
+
+
+        
     });
 });
 
-module.exports = router;
+function pass(usuar){
+    return usuar;
+}
+
+module.exports = {pass(usuar)};
+module.exports = router, pass(usuar);

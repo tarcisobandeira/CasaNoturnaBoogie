@@ -24,6 +24,7 @@ const Produto = require('./modules/produtos');
 
 const clienteController = require('./controllers/clienteController');
 const FuncionarioController = require('./controllers/funcionarioController');
+const trocaTelaController = require('./controllers/trocaTelaController');
 
 app.get('/', (req, res) => {
     res.render('login');
@@ -31,6 +32,7 @@ app.get('/', (req, res) => {
 
 app.use('/', clienteController);
 app.use('/', FuncionarioController);
+app.use('/', trocaTelaController);
 
 app.listen(8080, () => {
     console.log('Servidor ON.');
